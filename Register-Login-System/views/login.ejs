@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Ekranı</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/login.css">
+    <style>
+        /* Özel CSS stilleri */
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <center><img style="width: 100px;" src="/img/user-image.png" alt=""></center>
+                        <h3 class="text-center">Giriş Yap</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST">
+                            <div class="form-group">
+                                <label for="username">Kullanıcı Adı</label>
+                                <input name="username" type="text" class="form-control" id="username" placeholder="Kullanıcı Adı">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Şifre</label>
+                                <input name="passwd" type="password" class="form-control" id="password" placeholder="Şifre">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Giriş Yap</button>
+                        </form>
+                        <br>
+                        <% if (err_msg!=false) { %>
+                          <div class="alert alert-danger" role="alert">
+                            <%= err_msg.message %>
+                          </div>
+                        <% } %>
+                        <center>Bir hesabın yok mu? <a href="/user/register">Kayıt ol</a></center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS ve jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
